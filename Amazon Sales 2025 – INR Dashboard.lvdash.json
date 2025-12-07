@@ -1,0 +1,480 @@
+{
+  "datasets": [
+    {
+      "name": "ef20014a",
+      "displayName": "Untitled dataset",
+      "queryLines": [
+        "USE CATALOG `workspace`;\n",
+        "USE SCHEMA `amazon_project`;\n",
+        "\n",
+        "SELECT\n",
+        "  Product_Category,\n",
+        "  ROUND(SUM(Total_Sales_INR), 2) AS total_revenue,\n",
+        "  COUNT(DISTINCT Order_ID) AS num_orders\n",
+        "FROM amazon_sales_clean\n",
+        "GROUP BY Product_Category\n",
+        "ORDER BY total_revenue DESC;\n"
+      ]
+    },
+    {
+      "name": "4059b678",
+      "displayName": "Untitled dataset",
+      "queryLines": [
+        "USE CATALOG `workspace`;\n",
+        "USE SCHEMA `amazon_project`;\n",
+        "\n",
+        "SELECT\n",
+        "  Product_Category,\n",
+        "  ROUND(SUM(Total_Sales_INR), 2) AS total_revenue,\n",
+        "  COUNT(DISTINCT Order_ID) AS num_orders\n",
+        "FROM amazon_sales_clean\n",
+        "GROUP BY Product_Category\n",
+        "ORDER BY total_revenue DESC;\n"
+      ]
+    },
+    {
+      "name": "ac66a157",
+      "displayName": "Untitled dataset",
+      "queryLines": [
+        "USE CATALOG `workspace`;\n",
+        "USE SCHEMA `amazon_project`;\n",
+        "\n",
+        "SELECT\n",
+        "  State,\n",
+        "  ROUND(SUM(Total_Sales_INR), 2) AS total_revenue,\n",
+        "  COUNT(DISTINCT Order_ID) AS num_orders\n",
+        "FROM amazon_sales_clean\n",
+        "GROUP BY State\n",
+        "ORDER BY total_revenue DESC;\n"
+      ]
+    },
+    {
+      "name": "de52b4be",
+      "displayName": "Untitled dataset",
+      "queryLines": [
+        "USE CATALOG `workspace`;\n",
+        "USE SCHEMA `amazon_project`;\n",
+        "\n",
+        "SELECT\n",
+        "  Payment_Method,\n",
+        "  ROUND(SUM(Total_Sales_INR), 2) AS total_revenue,\n",
+        "  COUNT(DISTINCT Order_ID) AS num_orders\n",
+        "FROM amazon_sales_clean\n",
+        "GROUP BY Payment_Method\n",
+        "ORDER BY total_revenue DESC;\n"
+      ]
+    },
+    {
+      "name": "51fe81c3",
+      "displayName": "KPI Counters",
+      "queryLines": [
+        "SELECT\r\n",
+        "  COUNT(DISTINCT Order_ID) AS total_orders,\r\n",
+        "  ROUND(SUM(Total_Sales_INR), 2) AS total_revenue,\r\n",
+        "  ROUND(AVG(Review_Rating), 2) AS avg_rating\r\n",
+        "FROM amazon_sales_clean;"
+      ],
+      "catalog": "workspace",
+      "schema": "amazon_project"
+    }
+  ],
+  "pages": [
+    {
+      "name": "1ff9bc21",
+      "displayName": "Amazon_sales",
+      "layout": [
+        {
+          "widget": {
+            "name": "8b916a0b",
+            "queries": [
+              {
+                "name": "f6fd1fce6c484f09a07f01de00891f37",
+                "query": {
+                  "datasetName": "4059b678",
+                  "fields": [
+                    {
+                      "name": "Product_Category",
+                      "expression": "`Product_Category`"
+                    },
+                    {
+                      "name": "column_4b98c1f6285",
+                      "expression": "SUM(`total_revenue`)"
+                    },
+                    {
+                      "name": "Product_Category",
+                      "expression": "`Product_Category`"
+                    }
+                  ],
+                  "disaggregated": false
+                }
+              }
+            ],
+            "spec": {
+              "version": 0,
+              "viz_spec": {
+                "display_name": "Visualization 1",
+                "viz_type": "CHART",
+                "serialized_options": "{\"isAggregationOn\":true,\"series\":{\"error_y\":{\"type\":\"data\",\"visible\":true},\"stacking\":null},\"coefficient\":1,\"yAxis\":[{\"type\":\"-\"},{\"opposite\":true,\"type\":\"-\"}],\"columnConfigurationMap\":{\"series\":{\"column\":\"Product_Category\",\"id\":\"column_4b98c1f6289\"},\"x\":{\"column\":\"Product_Category\",\"id\":\"column_4b98c1f6288\"},\"y\":[{\"column\":\"total_revenue\",\"id\":\"column_4b98c1f6285\",\"transform\":\"SUM\"}]},\"alignYAxesAtZero\":true,\"direction\":{\"type\":\"counterclockwise\"},\"swappedAxes\":true,\"percentFormat\":\"0[.]00%\",\"textFormat\":\"\",\"legend\":{\"traceorder\":\"normal\"},\"globalSeriesType\":\"column\",\"version\":2,\"sizemode\":\"diameter\",\"seriesOptions\":{\"column_4b98c1f6285\":{\"name\":\"num_orders\",\"type\":\"column\",\"yAxis\":0}},\"error_y\":{\"type\":\"data\",\"visible\":true},\"sortX\":true,\"showDataLabels\":false,\"missingValuesAsZero\":true,\"useAggregationsUi\":true,\"numberFormat\":\"0,0.[00000]\",\"dateTimeFormat\":\"DD/MM/YYYY HH:mm\",\"sortY\":true,\"valuesOptions\":{},\"xAxis\":{\"labels\":{\"enabled\":true},\"type\":\"-\"}}",
+                "query_name": "f6fd1fce6c484f09a07f01de00891f37"
+              }
+            }
+          },
+          "position": {
+            "x": 0,
+            "y": 4,
+            "width": 6,
+            "height": 6
+          }
+        },
+        {
+          "widget": {
+            "name": "29ede2fd",
+            "queries": [
+              {
+                "name": "5185195296b94abd81931e6e34c5ca2c",
+                "query": {
+                  "datasetName": "ac66a157",
+                  "fields": [
+                    {
+                      "name": "State",
+                      "expression": "`State`"
+                    },
+                    {
+                      "name": "column_4b98c1f6306",
+                      "expression": "SUM(`total_revenue`)"
+                    },
+                    {
+                      "name": "State",
+                      "expression": "`State`"
+                    }
+                  ],
+                  "disaggregated": false
+                }
+              }
+            ],
+            "spec": {
+              "version": 0,
+              "viz_spec": {
+                "display_name": "Visualization 1",
+                "viz_type": "CHART",
+                "serialized_options": "{\"isAggregationOn\":true,\"series\":{\"error_y\":{\"type\":\"data\",\"visible\":true},\"stacking\":null},\"coefficient\":1,\"yAxis\":[{\"type\":\"-\"},{\"opposite\":true,\"type\":\"-\"}],\"columnConfigurationMap\":{\"series\":{\"column\":\"State\",\"id\":\"column_4b98c1f6307\"},\"x\":{\"column\":\"State\",\"id\":\"column_4b98c1f6309\"},\"y\":[{\"column\":\"total_revenue\",\"id\":\"column_4b98c1f6306\",\"transform\":\"SUM\"}]},\"alignYAxesAtZero\":true,\"direction\":{\"type\":\"counterclockwise\"},\"swappedAxes\":false,\"percentFormat\":\"0[.]00%\",\"textFormat\":\"\",\"legend\":{\"traceorder\":\"normal\"},\"globalSeriesType\":\"column\",\"version\":2,\"sizemode\":\"diameter\",\"seriesOptions\":{\"column_4b98c1f6306\":{\"name\":\"num_orders\",\"type\":\"column\",\"yAxis\":0}},\"error_y\":{\"type\":\"data\",\"visible\":true},\"sortX\":true,\"showDataLabels\":false,\"missingValuesAsZero\":true,\"useAggregationsUi\":true,\"numberFormat\":\"0,0.[00000]\",\"dateTimeFormat\":\"DD/MM/YYYY HH:mm\",\"sortY\":true,\"valuesOptions\":{},\"xAxis\":{\"labels\":{\"enabled\":true},\"type\":\"-\"}}",
+                "query_name": "5185195296b94abd81931e6e34c5ca2c"
+              }
+            }
+          },
+          "position": {
+            "x": 0,
+            "y": 10,
+            "width": 6,
+            "height": 6
+          }
+        },
+        {
+          "widget": {
+            "name": "a8e0b4d9",
+            "queries": [
+              {
+                "name": "78b314b1bb754f27971b30a555b744ea",
+                "query": {
+                  "datasetName": "de52b4be",
+                  "fields": [
+                    {
+                      "name": "Payment_Method",
+                      "expression": "`Payment_Method`"
+                    },
+                    {
+                      "name": "column_4b98c1f6321",
+                      "expression": "SUM(`num_orders`)"
+                    }
+                  ],
+                  "disaggregated": false
+                }
+              }
+            ],
+            "spec": {
+              "version": 0,
+              "viz_spec": {
+                "display_name": "Visualization 1",
+                "viz_type": "CHART",
+                "serialized_options": "{\"isAggregationOn\":true,\"series\":{\"error_y\":{\"type\":\"data\",\"visible\":true},\"stacking\":null},\"coefficient\":1,\"yAxis\":[{\"type\":\"-\"},{\"opposite\":true,\"type\":\"-\"}],\"columnConfigurationMap\":{\"x\":{\"column\":\"Payment_Method\",\"id\":\"column_4b98c1f6324\"},\"y\":[{\"column\":\"num_orders\",\"id\":\"column_4b98c1f6321\",\"transform\":\"SUM\"}]},\"alignYAxesAtZero\":true,\"direction\":{\"type\":\"counterclockwise\"},\"swappedAxes\":false,\"percentFormat\":\"0[.]00%\",\"textFormat\":\"\",\"legend\":{\"traceorder\":\"normal\"},\"globalSeriesType\":\"pie\",\"version\":2,\"sizemode\":\"diameter\",\"seriesOptions\":{\"column_4b98c1f6321\":{\"name\":\"num_orders\",\"type\":\"pie\",\"yAxis\":0}},\"error_y\":{\"type\":\"data\",\"visible\":true},\"sortX\":true,\"showDataLabels\":true,\"missingValuesAsZero\":true,\"useAggregationsUi\":true,\"numberFormat\":\"0,0.[00000]\",\"dateTimeFormat\":\"DD/MM/YYYY HH:mm\",\"sortY\":true,\"valuesOptions\":{},\"xAxis\":{\"labels\":{\"enabled\":true},\"type\":\"-\"}}",
+                "query_name": "78b314b1bb754f27971b30a555b744ea"
+              }
+            }
+          },
+          "position": {
+            "x": 0,
+            "y": 16,
+            "width": 6,
+            "height": 6
+          }
+        },
+        {
+          "widget": {
+            "name": "47047994",
+            "queries": [
+              {
+                "name": "main_query",
+                "query": {
+                  "datasetName": "51fe81c3",
+                  "fields": [
+                    {
+                      "name": "total_orders",
+                      "expression": "`total_orders`"
+                    }
+                  ],
+                  "disaggregated": true
+                }
+              }
+            ],
+            "spec": {
+              "version": 2,
+              "widgetType": "counter",
+              "encodings": {
+                "value": {
+                  "fieldName": "total_orders"
+                }
+              },
+              "frame": {
+                "showTitle": true,
+                "title": "Total Orders\n"
+              }
+            }
+          },
+          "position": {
+            "x": 0,
+            "y": 0,
+            "width": 3,
+            "height": 2
+          }
+        },
+        {
+          "widget": {
+            "name": "c1768083",
+            "queries": [
+              {
+                "name": "main_query",
+                "query": {
+                  "datasetName": "51fe81c3",
+                  "fields": [
+                    {
+                      "name": "total_revenue",
+                      "expression": "`total_revenue`"
+                    }
+                  ],
+                  "disaggregated": true
+                }
+              }
+            ],
+            "spec": {
+              "version": 2,
+              "widgetType": "counter",
+              "encodings": {
+                "value": {
+                  "fieldName": "total_revenue"
+                }
+              },
+              "frame": {
+                "showTitle": true,
+                "title": "Total_Revenue\n"
+              }
+            }
+          },
+          "position": {
+            "x": 0,
+            "y": 2,
+            "width": 6,
+            "height": 2
+          }
+        },
+        {
+          "widget": {
+            "name": "2048029a",
+            "queries": [
+              {
+                "name": "main_query",
+                "query": {
+                  "datasetName": "51fe81c3",
+                  "fields": [
+                    {
+                      "name": "avg_rating",
+                      "expression": "`avg_rating`"
+                    }
+                  ],
+                  "disaggregated": true
+                }
+              }
+            ],
+            "spec": {
+              "version": 2,
+              "widgetType": "counter",
+              "encodings": {
+                "value": {
+                  "fieldName": "avg_rating"
+                }
+              },
+              "frame": {
+                "showTitle": true,
+                "title": "Average Rating"
+              }
+            }
+          },
+          "position": {
+            "x": 3,
+            "y": 0,
+            "width": 3,
+            "height": 2
+          }
+        }
+      ],
+      "pageType": "PAGE_TYPE_CANVAS"
+    },
+    {
+      "name": "ab872af7",
+      "displayName": "Global Filters",
+      "layout": [
+        {
+          "widget": {
+            "name": "38afa342",
+            "queries": [
+              {
+                "name": "dashboards/01f0d228503111e0a7fd9d14935087ad/datasets/01f0d2289cd110bda0299407d22857d8_Product_Category",
+                "query": {
+                  "datasetName": "ef20014a",
+                  "fields": [
+                    {
+                      "name": "Product_Category",
+                      "expression": "`Product_Category`"
+                    },
+                    {
+                      "name": "Product_Category_associativity",
+                      "expression": "COUNT_IF(`associative_filter_predicate_group`)"
+                    }
+                  ],
+                  "disaggregated": false
+                }
+              }
+            ],
+            "spec": {
+              "version": 2,
+              "widgetType": "filter-single-select",
+              "encodings": {
+                "fields": [
+                  {
+                    "fieldName": "Product_Category",
+                    "queryName": "dashboards/01f0d228503111e0a7fd9d14935087ad/datasets/01f0d2289cd110bda0299407d22857d8_Product_Category"
+                  }
+                ]
+              },
+              "frame": {
+                "showTitle": true
+              }
+            }
+          },
+          "position": {
+            "x": 0,
+            "y": 0,
+            "width": 1,
+            "height": 2
+          }
+        },
+        {
+          "widget": {
+            "name": "ed134a07",
+            "queries": [
+              {
+                "name": "dashboards/01f0d228503111e0a7fd9d14935087ad/datasets/01f0d229009c13e7bf9fc8651295a8fc_State",
+                "query": {
+                  "datasetName": "ac66a157",
+                  "fields": [
+                    {
+                      "name": "State",
+                      "expression": "`State`"
+                    },
+                    {
+                      "name": "State_associativity",
+                      "expression": "COUNT_IF(`associative_filter_predicate_group`)"
+                    }
+                  ],
+                  "disaggregated": false
+                }
+              }
+            ],
+            "spec": {
+              "version": 2,
+              "widgetType": "filter-single-select",
+              "encodings": {
+                "fields": [
+                  {
+                    "fieldName": "State",
+                    "queryName": "dashboards/01f0d228503111e0a7fd9d14935087ad/datasets/01f0d229009c13e7bf9fc8651295a8fc_State"
+                  }
+                ]
+              },
+              "frame": {
+                "showTitle": true
+              }
+            }
+          },
+          "position": {
+            "x": 0,
+            "y": 2,
+            "width": 1,
+            "height": 2
+          }
+        },
+        {
+          "widget": {
+            "name": "ec1a51bd",
+            "queries": [
+              {
+                "name": "dashboards/01f0d228503111e0a7fd9d14935087ad/datasets/01f0d229df3f1761adc3539bad5e226d_Payment_Method",
+                "query": {
+                  "datasetName": "de52b4be",
+                  "fields": [
+                    {
+                      "name": "Payment_Method",
+                      "expression": "`Payment_Method`"
+                    },
+                    {
+                      "name": "Payment_Method_associativity",
+                      "expression": "COUNT_IF(`associative_filter_predicate_group`)"
+                    }
+                  ],
+                  "disaggregated": false
+                }
+              }
+            ],
+            "spec": {
+              "version": 2,
+              "widgetType": "filter-single-select",
+              "encodings": {
+                "fields": [
+                  {
+                    "fieldName": "Payment_Method",
+                    "queryName": "dashboards/01f0d228503111e0a7fd9d14935087ad/datasets/01f0d229df3f1761adc3539bad5e226d_Payment_Method"
+                  }
+                ]
+              },
+              "frame": {
+                "showTitle": true
+              }
+            }
+          },
+          "position": {
+            "x": 0,
+            "y": 4,
+            "width": 1,
+            "height": 2
+          }
+        }
+      ],
+      "pageType": "PAGE_TYPE_GLOBAL_FILTERS"
+    }
+  ],
+  "uiSettings": {
+    "theme": {
+      "widgetHeaderAlignment": "ALIGNMENT_UNSPECIFIED"
+    },
+    "applyModeEnabled": false
+  }
+}
